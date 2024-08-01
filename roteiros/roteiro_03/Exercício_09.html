@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercício 09</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      function gerarDados() {
+        var numeros = document.getElementById('txtNumeros').value
+        numeros = numeros.split(',')
+
+        var count = numeros.length
+        var total = 0
+
+        var media = 0
+        var positivos = 0
+        var negativos = 0
+        var positivosPercent = 0
+        var negativosPercent = 0
+
+        for (i = 0; i < numeros.length; i++) {
+          num = parseInt(numeros[i].trim())
+          total += num
+          if (num >= 0) positivos++
+          if (num < 0) negativos++
+        }
+
+        media = total / count
+        positivosPercent = positivos / count * 100
+        negativosPercent = negativos / count * 100
+
+        document.write(
+          'Total de números: ' + count + '<br>' +
+          'Média: ' + media + '<br>' +
+          'Números positivos: ' + positivos + '<br>' +
+          'Números negativos: ' + negativos + '<br>' +
+          'Porcentagem de números positivos: ' + positivosPercent + '%<br>' +
+          'Porcentagem de números negativos: ' + negativosPercent + '%<br>'
+        )
+      }
+    </script>
+  </head>
+
+  <body>
+    Texto: <input type="text" id="txtNumeros" />
+    <input type="button" value="Calcular Fatorial!" onclick="gerarDados()" />
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercício 07</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      function calculaImpares() {
+        var numeros = document.getElementById('txtNumeros').value
+        numeros = numeros.split(',')
+        var total = 0
+
+        for (i = 0; i < numeros.length; i++) {
+          num = parseInt(numeros[i].trim())
+          if (num % 3 == 0 && num % 2 == 1) {
+            total += num
+          }
+        }
+
+        document.write(
+          'A soma dos números ímpares digitados divisíveis por 3 é: ' + total + '<br>'
+        )
+      }
+    </script>
+  </head>
+
+  <body>
+    Texto: <input type="text" id="txtNumeros" />
+    <input type="button" value="Calcular Soma!" onclick="calculaImpares()" />
+  </body>
+</html>
